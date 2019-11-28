@@ -1,6 +1,7 @@
 defmodule Hello.Content.Post do
   use Ecto.Schema
   import Ecto.Changeset
+  @derive {Phoenix.Param, key: :slug}
 
   schema "posts" do
     field :body, :string
