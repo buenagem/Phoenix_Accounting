@@ -1,6 +1,4 @@
 <section class="phx-hero">
   <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <button>
-    <%= link "User CRUD", to: Routes.room_path(@conn, :index), class: "btn-user" %>
-  </button>
+  <%= link "User CRUD", to: Routes.room_path(@conn, :index) %>
 </section>
