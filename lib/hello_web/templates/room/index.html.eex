@@ -10,6 +10,9 @@
     <%= for room <- @rooms do %>
       <tr>
         <td>
+          <%= room.name %>
+        </td>
+        <td>
           <span><%= link "Show", to: Routes.room_path(@conn, :show, room) %></span>
           <span><%= link "Edit", to: Routes.room_path(@conn, :edit, room) %></span>
           <span><%= link "Delete", to: Routes.room_path(@conn, :delete, room), method: :delete, data: [confirm: "Are you sure?"] %></span>

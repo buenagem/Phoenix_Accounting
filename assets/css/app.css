@@ -1,3 +1,11 @@
 /* This file is for your main application css. */
 
 @import "./phoenix.css";
+
+.btn-user {
+  color: white;
+}
+
+.btn-user:hover {
+  color: white;
+}
