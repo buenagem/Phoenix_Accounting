@@ -5,6 +5,7 @@ defmodule Hello.Repo.Migrations.AddFieldsToRooms do
     alter table(:rooms) do
       add :name, :string
       add :description, :string
+      add :topic, :string
     end
   end
 end

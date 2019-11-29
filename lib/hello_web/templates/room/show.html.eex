@@ -1,7 +1,15 @@
 <h1>Show Room</h1>
 
 <ul>
-
+  <li>Name:
+    <%= @room.name %>
+  </li>
+  <li>Topic:
+    <%= @room.topic %>
+  </li>
+  <li>Description:
+    <%= @room.description %>
+  </li>
 </ul>
 
 <span><%= link "Edit", to: Routes.room_path(@conn, :edit, @room) %></span>
