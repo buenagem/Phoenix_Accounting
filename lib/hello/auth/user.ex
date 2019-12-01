@@ -4,9 +4,8 @@ defmodule Hello.Auth.User do
 
   schema "users" do
     field :email, :string
-    field :is_admin, :boolean, default: false
-    field :name, :string
-    field :password_hash, :string
+    field :encrypted_password, :string
+    field :username, :string
 
     timestamps()
   end
@@ -14,7 +13,9 @@ defmodule Hello.Auth.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :email, :password_hash, :is_admin])
-    |> validate_required([:name, :email, :password_hash, :is_admin])
+    |> cast(attrs, [:email, :username, :encrypted_password])
+    |> validate_required([:email, :username, :encrypted_password])
+    |> unique_constraint(:email)
+    |> unique_constraint(:username)
   end
 end

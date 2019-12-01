@@ -3,13 +3,14 @@ defmodule Hello.Repo.Migrations.CreateUsers do
 
   def change do
     create table(:users) do
-      add :name, :string
       add :email, :string
-      add :password_hash, :string
-      add :is_admin, :boolean, default: false, null: false
+      add :username, :string
+      add :encrypted_password, :string
 
       timestamps()
     end
 
+    create unique_index(:users, [:email])
+    create unique_index(:users, [:username])
   end
 end
