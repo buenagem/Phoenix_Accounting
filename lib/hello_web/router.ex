@@ -16,8 +16,9 @@ defmodule HelloWeb.Router do
   scope "/", HelloWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
-    resources "/users", RoomController
+    # get "/", PageController, :index
+    # resources "/rooms", RoomController
+    resources "/", UserController
   end
 
   # Other scopes may use custom stacks.
