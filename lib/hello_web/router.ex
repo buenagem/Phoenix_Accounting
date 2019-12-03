@@ -17,8 +17,11 @@ defmodule HelloWeb.Router do
     pipe_through :browser
 
     # get "/", PageController, :index
+    # resources "/", UserController
     resources "/rooms", RoomController
-    resources "/", UserController
+    get "/", UserController, :index
+    post "/", UserController, :sign_in
+    delete "/", UserController, :sign_out
   end
 
   # Other scopes may use custom stacks.
