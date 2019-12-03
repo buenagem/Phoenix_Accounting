@@ -17,7 +17,7 @@ defmodule HelloWeb.Router do
     pipe_through :browser
 
     # get "/", PageController, :index
-    # resources "/rooms", RoomController
+    resources "/rooms", RoomController
     resources "/", UserController
   end
 
